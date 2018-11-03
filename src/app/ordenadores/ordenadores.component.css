@@ -1,0 +1,49 @@
+.navegacion {
+  background-color: #3D3E3F;
+}
+
+a {
+  color: white;
+
+}
+
+button {
+  color: black;
+  background-color: white;
+}
+
+.uk-card {
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+#add {
+  width: 100%;
+}
+
+#container{
+  margin: auto;
+  overflow: hidden;
+}
+.content-container {
+  height: 100%;
+}
+.content-scroll-container {
+  overflow-y: scroll;
+}
+.scroll {
+  overflow: scroll;
+  padding-bottom: 100%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

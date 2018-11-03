@@ -1,0 +1,168 @@
+<div class="wrapper">
+    <div class="sidebar" data-color="blue" data-image="assets/img/sidebar-5.jpg">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="#" class="simple-text">
+                    Binhex System
+                    <div class="divider"></div>
+                    Copias de Seguridad
+                </a>
+                
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a href="#">
+                        <i class="pe-7s-graph"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <!--<li>
+                    <a (click)="irProfile()">
+                        <i class="pe-7s-user"></i>
+                        <p>Mi perfil</p>
+                    </a>
+                </li>-->
+                <li>
+                    <a (click)="irEmpresas()">
+                        <i class="pe-7s-note2"></i>
+                        <p>Empresas</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Mis Empresas</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                           <a (click)="irProfile()">
+                               <p>Hola, {{ getNombreUsuario() }}</p>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p>
+										Acciones
+										<b class="caret"></b>
+									</p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a uk-toggle="target: #modal-add">Añadir empresa</a></li>
+                                <div id="modal-add" uk-modal="center: true">
+                                    <div class="uk-modal-dialog">
+                                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                                            <div class="uk-modal-header">
+                                                <h2 class="uk-modal-title">Añadir una nueva empresa</h2>
+                                            </div>
+                                            <div class="uk-modal-body">
+                                                <form class="ui form">
+                                                    <div class="required field">
+                                                    <label>Nombre de la empresa</label>
+                                                    <input type="text" #empresa placeholder="Nombre de la empresa...">
+                                                    </div>
+                                                    <div class="field">
+                                                    <label>Descripción</label>
+                                                    <textarea rows="2" #desc placeholder="¿Quién es esta empresa?..."></textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="uk-modal-footer uk-text-right">
+                                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                                                <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="nuevaEmpresaNoDestructivo(empresa.value, desc.value)">Añadir</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                              </ul>
+                        </li>
+                        <li>
+                            <a (click)="cerrarSesion()">
+                                <p>Cerrar Sesión</p>
+                            </a>
+                        </li>
+						<li class="separator hidden-lg hidden-md"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h3 class="title">Listado de empresas</h3>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Empresa</th>
+                                    <th>Descripción</th>
+                                    <th>Número de pcs</th>
+                                    <th>Estado</th>
+                                    <th>Ver ordenadores</th>
+                                    <th>Eliminar empresa</th>
+                                </tr>
+                            <tbody *ngFor="let item of empresas | async; let i = index" data-index="i">
+                                <tr>
+                                    <td>{{ item.$key }}</td>
+                                    <td>{{ item.descripcion }}</td>
+                                    <td>{{ mostrarNum(item.$key) }}</td>
+                                    <td>
+                                        <i *ngIf="obtenerEstado(item.$key) == 'Error'" i class="red circle icon"></i>
+                                        <i *ngIf="obtenerEstado(item.$key) == 'Ok'" i class="green circle icon"></i>
+                                        <i *ngIf="obtenerEstado(item.$key) == 'warning'" i class="yellow circle icon"></i>
+                                        <i *ngIf="obtenerEstado(item.$key) == 'default'" i class="circle icon"></i>
+                                    </td>
+                                    <td><button class="ui green basic button" (click)="ordenadores(item.$key)">Ver</button></td>
+                                    <td><button class="ui red basic button" type="button" uk-toggle="target: #modal-eliminar">Eliminar</button></td>
+                                    <div id="modal-eliminar" uk-modal="center: true">
+                                    <div class="uk-modal-dialog">
+                                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                                            <div class="uk-modal-header">
+                                                <h2 class="uk-modal-title">¿Seguro que desea eliminar {{ item.$key }}?</h2>
+                                            </div>
+                                            <div class="uk-modal-body">
+                                                <p>Si le das a aceptar elimina permanentemente la empresa y todos sus ordenadores.</p>
+                                            </div>
+                                            <div class="uk-modal-footer uk-text-right">
+                                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                                                <button class="uk-button uk-button-primary uk-modal-close" type="button" (click)="borrar(item.$key)">Sí, eliminar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

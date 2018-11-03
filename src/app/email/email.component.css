@@ -1,0 +1,29 @@
+.txt {
+    padding-left: 15%;
+    font-size: 16px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    width: 100%;
+}
+
+.uk-form-icon {
+    padding-top: 3%;
+    padding-left: 5%;
+    height: 50px;
+    width: 50px;
+}
+
+.form-container {
+    margin-top: 5%;
+}
+.ui.button:disabled {
+    opacity: .6!important;
+}
+
+.uk-input {
+    width: 100%;
+}
+
+.acceder {
+    
+    width: 300px;
+}

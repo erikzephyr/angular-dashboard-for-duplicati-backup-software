@@ -1,0 +1,30 @@
+<div id="login">
+  <div class="form-container">
+    <!--<a routerLink="/login" id="goback">Go back</a>-->
+    <img src="../assets/images/logo_copias_seguridad.png" style="padding-bottom: 20%; padding-top: 10%; background-color: white; height:70%; width: 70%; left: 15%; position:relative;"alt="">
+
+    <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+      <!-- Usuario -->
+      <div class="uk-margin">
+        <div class="uk-inline uk-width-1-1">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input type="text" placeholder="Dirección de correo . . ." (ngModel)="email" name="email" class="txt" required>
+        </div>
+    </div>
+
+    <!-- Password -->
+    <div class="uk-margin">
+        <div class="uk-inline uk-width-1-1">
+            <span class="uk-form-icon" uk-icon="icon: lock"></span>
+            <input type="password" placeholder="Contraseña . . ." (ngModel)="password" name="password" class="txt" required>
+        </div>
+    </div>
+    <button class="fluid positive ui button" type="submit" [disabled]="!formData.valid">Acceder</button>
+    <a routerLink="/signup" class="alc">No tengo cuenta, quiero crear una...</a>
+    </form>
+    
+  </div>
+</div>
+

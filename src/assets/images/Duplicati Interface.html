@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost:4200/empresas -->
+<html class="mdl-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Duplicati Interface</title>
+  <!--<base href="/">--><base href=".">
+  <script src="./Duplicati Interface_files/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="./Duplicati Interface_files/jquery.min.js"></script>
+
+  <script src="./Duplicati Interface_files/web-animations.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="http://localhost:4200/favicon.ico">
+  <script defer="" src="./Duplicati Interface_files/material.min.js"></script>      
+  <!-- 1. Load libraries-->
+  <!-- Polyfill(s) for older browsers-->
+  <script src="./Duplicati Interface_files/shim.min.js"></script>
+  <script src="./Duplicati Interface_files/system.src.js"></script>
+  
+
+  <link rel="stylesheet" href="./Duplicati Interface_files/uikit.min.css">
+  <script src="./Duplicati Interface_files/uikit.min.js"></script>
+  <script src="./Duplicati Interface_files/uikit-icons.min.js"></script>
+
+  <link rel="stylesheet" href="./Duplicati Interface_files/semantic.min.css">
+  <script src="./Duplicati Interface_files/jquery.min(1).js"></script>
+  <script src="./Duplicati Interface_files/semantic.min.js"></script>
+
+<style type="text/css">/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: white
+;
+    padding-top:0%;
+}
+
+.form-container {
+    background:white;
+    padding:3.5em;
+    width:500px;
+    position:fixed;
+    left:50%;
+    margin-left:-250px;
+}
+
+
+.basic-btn {
+    background: #00C853;
+    color:white;
+    width: 100%;
+    margin-top: 5%; 
+    height: 50px;
+    font-size: 14px;
+
+}
+
+input.txt {
+    background:#fff !important;
+    padding:1.3em 1em;
+    font-size:1.3em;
+    border: 1px solid #BBBBBB;
+}
+
+h2 {
+    margin: 1.7em 0 .9em 0;
+}
+
+.alc {
+    text-align:center;
+    display:block;
+    margin: 15px 0;
+}
+
+.error {
+    background:#f1f0ef;
+    padding:1em;
+    width:100%;
+    display:block;
+    margin-bottom:20px;
+}
+
+#goback {
+    font-weight:bold;
+    text-transform:uppercase;
+    font-size:.8em;
+    color:#3B8598;
+}
+#goback span {
+    font-size:1em;
+}
+
+
+
+.loading {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #ccc;
+  position: fixed;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+
+
+.loading:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  background: #E2E4E6;
+  top: 10px;
+  left: -5px;
+  -webkit-animation: spin 1.2s infinite;
+          animation: spin 1.2s infinite;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding-top:3.5em;
+    }
+
+    .form-container {
+        padding:1.2em;
+        width:90%;
+        margin-left:-45%;
+    }
+    button {
+        font-size:1em;
+    }
+}
+</style><style></style><style>.navegacion[_ngcontent-dju-37] {
+  background-color: #3D3E3F;
+}
+list-item[_ngcontent-dju-37] {
+  display: block;
+  background: white;
+  font-size: 1em;
+  padding: 20px;
+  height: 100px;
+  line-height: 1.2em;
+  overflow: hidden;
+  }
+
+a[_ngcontent-dju-37] {
+  color: white;
+}
+
+.uk-card[_ngcontent-dju-37] {
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h3[_ngcontent-dju-37] {
+  text-align: center;
+}
+
+p[_ngcontent-dju-37] {
+  text-align: justify;
+}
+
+#add[_ngcontent-dju-37] {
+  width: 100%;
+}
+
+#container[_ngcontent-dju-37]{
+  overflow: scroll;
+}
+.content-container[_ngcontent-dju-37] {
+  height: 100%;
+}
+.content-scroll-container[_ngcontent-dju-37] {
+  overflow-y: scroll;
+}
+.FixedHeightContainer[_ngcontent-dju-37]
+{
+  float:right;
+  height: auto;
+  width:auto;
+}
+.content[_ngcontent-dju-37]
+{
+  height:2240px;
+}
+
+body[_ngcontent-dju-37], html[_ngcontent-dju-37] {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.scroll[_ngcontent-dju-37] {
+  overflow: scroll;
+  padding-bottom: 100%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}</style></head>
+<body>
+  <app-root ng-version="2.4.10" _nghost-dju-33=""><router-outlet _ngcontent-dju-33=""></router-outlet><app-empresas _nghost-dju-37="" style="position: fixed; width: 100%;">
+
+
+<div _ngcontent-dju-37="" class="uk-offcanvas-content">
+    
+    <div _ngcontent-dju-37="" style="padding-left: 1%; padding-top: 1%; padding-right: 1%; padding-bottom: 1%; background-color: rgba(33, 33, 33, .8);">
+        <button _ngcontent-dju-37="" class="circular ui icon button" style="height: 60px; width: 60px; color: rgba(33, 33, 33, .8); background-color: whitesmoke;" type="button" uk-toggle="target: #offcanvas-nav"><i _ngcontent-dju-37="" class="home icon large"></i></button>
+        <button _ngcontent-dju-37="" class="circular ui icon button" style="height: 60px; width: 60px; color: rgba(33, 33, 33, .8);; background-color: whitesmoke;" type="button" uk-toggle="target: #modal-add"><i _ngcontent-dju-37="" class="users icon large"></i></button>
+        <button _ngcontent-dju-37="" class="circular ui icon button right floated" style="right: 10%; height: 60px; width: 60px; color: rgba(33, 33, 33, .8); background-color: whitesmoke;" type="button"><i _ngcontent-dju-37="" class="power icon large"></i></button>
+        <div _ngcontent-dju-37="" style="
+    width:  200px;
+">
+            <h2 _ngcontent-dju-37="" style="width:;width: 200px;">Hola Erikazo</h2>
+            <img _ngcontent-dju-37="" class="ui medium circular image right floated" src="./Duplicati Interface_files/avatar.png" style="height: 60px; width: 60px;">
+        </div>
+        
+        
+    </div>
+    
+    <div _ngcontent-dju-37="" id="offcanvas-nav" uk-offcanvas="mode: push; overlay: true" class="uk-offcanvas">
+        <div _ngcontent-dju-37="" class="uk-offcanvas-bar  uk-flex uk-flex-column">
+            <div _ngcontent-dju-37="" style="background-color: white; width: 100%">
+                    <img _ngcontent-dju-37="" alt="" src="./Duplicati Interface_files/logo_copias_seguridad.png">
+                    
+                </div> 
+                
+            <ul _ngcontent-dju-37="" class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">                   
+                <li _ngcontent-dju-37="" class="uk-parent">
+                    <h3 _ngcontent-dju-37="" href="#">Menú</h3>
+                    <ul _ngcontent-dju-37="" class="uk-nav-sub">
+                        <li _ngcontent-dju-37=""><a _ngcontent-dju-37="" href="http://localhost:4200/#">Inicio</a></li>
+                        <li _ngcontent-dju-37=""><a _ngcontent-dju-37="">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+<div _ngcontent-dju-37="" id="modal-add" uk-modal="center: true" class="uk-modal">
+  <div _ngcontent-dju-37="" class="uk-modal-dialog">
+        <button _ngcontent-dju-37="" class="uk-modal-close-default uk-close uk-icon" type="button" uk-close=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" icon="close-icon" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+        <div _ngcontent-dju-37="" class="uk-modal-header">
+            <h2 _ngcontent-dju-37="" class="uk-modal-title">Añadir una nueva empresa</h2>
+        </div>
+        <div _ngcontent-dju-37="" class="uk-modal-body">
+             <form _ngcontent-dju-37="" class="ui form ng-untouched ng-pristine ng-valid">
+                <div _ngcontent-dju-37="" class="required field">
+                  <label _ngcontent-dju-37="">Nombre de la empresa</label>
+                  <input _ngcontent-dju-37="" placeholder="Nombre de la empresa..." type="text">
+                </div>
+                <div _ngcontent-dju-37="" class="field">
+                  <label _ngcontent-dju-37="">Descripción</label>
+                  <textarea _ngcontent-dju-37="" placeholder="¿Quién es esta empresa?..." rows="2"></textarea>
+                </div>
+            </form>
+        </div>
+        <div _ngcontent-dju-37="" class="uk-modal-footer uk-text-right">
+            <button _ngcontent-dju-37="" class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+            <button _ngcontent-dju-37="" class="uk-button uk-button-primary uk-modal-close" type="button">Añadir</button>
+        </div>
+    </div>
+</div>
+
+
+<div _ngcontent-dju-37="" class="scroll" style="padding-top: 20px;">
+  <div _ngcontent-dju-37="">
+    <h2 _ngcontent-dju-37="" class="ui center aligned icon header">
+      <i _ngcontent-dju-37="" class="users icon"></i>
+      Listado de empresas
+    </h2>
+    <table _ngcontent-dju-37="" class="uk-table uk-table-middle uk-table-divider uk-table-hover">
+    <thead _ngcontent-dju-37="">
+        <tr _ngcontent-dju-37="">
+            <th _ngcontent-dju-37="" class="uk-width-small">Nombre de la empresa</th>
+            <th _ngcontent-dju-37="" class="uk-table-expand">Descripción</th>
+            <th _ngcontent-dju-37="" class="uk-width-small">Número de pcs</th>
+            <th _ngcontent-dju-37="" class="uk-width-small">Estado</th>
+            <th _ngcontent-dju-37="" class="uk-width-small">Ver ordenadores</th>
+            <th _ngcontent-dju-37="" class="uk-width-small">Eliminar empresa</th>
+        </tr>
+    </thead>
+    <!--template bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+}--><tbody _ngcontent-dju-37="" data-index="i">
+        <tr _ngcontent-dju-37="">
+            <td _ngcontent-dju-37="">binhex</td>
+            <td _ngcontent-dju-37=""></td>
+            <td _ngcontent-dju-37="">3</td>
+            <td _ngcontent-dju-37="">
+              <!--template bindings={
+  "ng-reflect-ng-if": "true"
+}--><i _ngcontent-dju-37="" class="red circle icon" i=""></i>
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+            </td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="positive ui button">Ver</button></td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="uk-button uk-button-default negative ui button" type="button" uk-toggle="target: #modal-eliminar">Eliminar</button></td>
+            <div _ngcontent-dju-37="" id="modal-eliminar" uk-modal="center: true" class="uk-modal">
+              <div _ngcontent-dju-37="" class="uk-modal-dialog">
+                    <button _ngcontent-dju-37="" class="uk-modal-close-default uk-close uk-icon" type="button" uk-close=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" icon="close-icon" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <div _ngcontent-dju-37="" class="uk-modal-header">
+                        <h2 _ngcontent-dju-37="" class="uk-modal-title">¿Seguro que desea eliminar binhex?</h2>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-body">
+                        <p _ngcontent-dju-37="">Si le das a aceptar elimina permanentemente la empresa y todos sus ordenadores.</p>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-footer uk-text-right">
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-primary uk-modal-close" type="button">Sí, eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        
+    </tbody><tbody _ngcontent-dju-37="" data-index="i">
+        <tr _ngcontent-dju-37="">
+            <td _ngcontent-dju-37="">empresa 1</td>
+            <td _ngcontent-dju-37=""></td>
+            <td _ngcontent-dju-37="">2</td>
+            <td _ngcontent-dju-37="">
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": "true"
+}--><i _ngcontent-dju-37="" class="green circle icon" i=""></i>
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+            </td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="positive ui button">Ver</button></td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="uk-button uk-button-default negative ui button" type="button" uk-toggle="target: #modal-eliminar">Eliminar</button></td>
+            <div _ngcontent-dju-37="" id="modal-eliminar" uk-modal="center: true" class="uk-modal">
+              <div _ngcontent-dju-37="" class="uk-modal-dialog">
+                    <button _ngcontent-dju-37="" class="uk-modal-close-default uk-close uk-icon" type="button" uk-close=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" icon="close-icon" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <div _ngcontent-dju-37="" class="uk-modal-header">
+                        <h2 _ngcontent-dju-37="" class="uk-modal-title">¿Seguro que desea eliminar empresa 1?</h2>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-body">
+                        <p _ngcontent-dju-37="">Si le das a aceptar elimina permanentemente la empresa y todos sus ordenadores.</p>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-footer uk-text-right">
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-primary uk-modal-close" type="button">Sí, eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        
+    </tbody><tbody _ngcontent-dju-37="" data-index="i">
+        <tr _ngcontent-dju-37="">
+            <td _ngcontent-dju-37="">empresa 2</td>
+            <td _ngcontent-dju-37=""></td>
+            <td _ngcontent-dju-37="">0</td>
+            <td _ngcontent-dju-37="">
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": "true"
+}--><i _ngcontent-dju-37="" class="green circle icon" i=""></i>
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+            </td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="positive ui button">Ver</button></td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="uk-button uk-button-default negative ui button" type="button" uk-toggle="target: #modal-eliminar">Eliminar</button></td>
+            <div _ngcontent-dju-37="" id="modal-eliminar" uk-modal="center: true" class="uk-modal">
+              <div _ngcontent-dju-37="" class="uk-modal-dialog">
+                    <button _ngcontent-dju-37="" class="uk-modal-close-default uk-close uk-icon" type="button" uk-close=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" icon="close-icon" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <div _ngcontent-dju-37="" class="uk-modal-header">
+                        <h2 _ngcontent-dju-37="" class="uk-modal-title">¿Seguro que desea eliminar empresa 2?</h2>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-body">
+                        <p _ngcontent-dju-37="">Si le das a aceptar elimina permanentemente la empresa y todos sus ordenadores.</p>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-footer uk-text-right">
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-primary uk-modal-close" type="button">Sí, eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        
+    </tbody><tbody _ngcontent-dju-37="" data-index="i">
+        <tr _ngcontent-dju-37="">
+            <td _ngcontent-dju-37="">final</td>
+            <td _ngcontent-dju-37=""></td>
+            <td _ngcontent-dju-37="">1</td>
+            <td _ngcontent-dju-37="">
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": "true"
+}--><i _ngcontent-dju-37="" class="green circle icon" i=""></i>
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+            </td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="positive ui button">Ver</button></td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="uk-button uk-button-default negative ui button" type="button" uk-toggle="target: #modal-eliminar">Eliminar</button></td>
+            <div _ngcontent-dju-37="" id="modal-eliminar" uk-modal="center: true" class="uk-modal">
+              <div _ngcontent-dju-37="" class="uk-modal-dialog">
+                    <button _ngcontent-dju-37="" class="uk-modal-close-default uk-close uk-icon" type="button" uk-close=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" icon="close-icon" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <div _ngcontent-dju-37="" class="uk-modal-header">
+                        <h2 _ngcontent-dju-37="" class="uk-modal-title">¿Seguro que desea eliminar final?</h2>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-body">
+                        <p _ngcontent-dju-37="">Si le das a aceptar elimina permanentemente la empresa y todos sus ordenadores.</p>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-footer uk-text-right">
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-primary uk-modal-close" type="button">Sí, eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        
+    </tbody><tbody _ngcontent-dju-37="" data-index="i">
+        <tr _ngcontent-dju-37="">
+            <td _ngcontent-dju-37="">hola</td>
+            <td _ngcontent-dju-37=""></td>
+            <td _ngcontent-dju-37="">0</td>
+            <td _ngcontent-dju-37="">
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": "true"
+}--><i _ngcontent-dju-37="" class="circle icon" i=""></i>
+            </td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="positive ui button">Ver</button></td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="uk-button uk-button-default negative ui button" type="button" uk-toggle="target: #modal-eliminar">Eliminar</button></td>
+            <div _ngcontent-dju-37="" id="modal-eliminar" uk-modal="center: true" class="uk-modal">
+              <div _ngcontent-dju-37="" class="uk-modal-dialog">
+                    <button _ngcontent-dju-37="" class="uk-modal-close-default uk-close uk-icon" type="button" uk-close=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" icon="close-icon" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <div _ngcontent-dju-37="" class="uk-modal-header">
+                        <h2 _ngcontent-dju-37="" class="uk-modal-title">¿Seguro que desea eliminar hola?</h2>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-body">
+                        <p _ngcontent-dju-37="">Si le das a aceptar elimina permanentemente la empresa y todos sus ordenadores.</p>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-footer uk-text-right">
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-primary uk-modal-close" type="button">Sí, eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        
+    </tbody><tbody _ngcontent-dju-37="" data-index="i">
+        <tr _ngcontent-dju-37="">
+            <td _ngcontent-dju-37="">mundo</td>
+            <td _ngcontent-dju-37=""></td>
+            <td _ngcontent-dju-37="">1</td>
+            <td _ngcontent-dju-37="">
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": "true"
+}--><i _ngcontent-dju-37="" class="circle icon" i=""></i>
+            </td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="positive ui button">Ver</button></td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="uk-button uk-button-default negative ui button" type="button" uk-toggle="target: #modal-eliminar">Eliminar</button></td>
+            <div _ngcontent-dju-37="" id="modal-eliminar" uk-modal="center: true" class="uk-modal">
+              <div _ngcontent-dju-37="" class="uk-modal-dialog">
+                    <button _ngcontent-dju-37="" class="uk-modal-close-default uk-close uk-icon" type="button" uk-close=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" icon="close-icon" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <div _ngcontent-dju-37="" class="uk-modal-header">
+                        <h2 _ngcontent-dju-37="" class="uk-modal-title">¿Seguro que desea eliminar mundo?</h2>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-body">
+                        <p _ngcontent-dju-37="">Si le das a aceptar elimina permanentemente la empresa y todos sus ordenadores.</p>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-footer uk-text-right">
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-primary uk-modal-close" type="button">Sí, eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        
+    </tbody><tbody _ngcontent-dju-37="" data-index="i">
+        <tr _ngcontent-dju-37="">
+            <td _ngcontent-dju-37="">nueva</td>
+            <td _ngcontent-dju-37=""></td>
+            <td _ngcontent-dju-37="">0</td>
+            <td _ngcontent-dju-37="">
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": "true"
+}--><i _ngcontent-dju-37="" class="green circle icon" i=""></i>
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+            </td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="positive ui button">Ver</button></td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="uk-button uk-button-default negative ui button" type="button" uk-toggle="target: #modal-eliminar">Eliminar</button></td>
+            <div _ngcontent-dju-37="" id="modal-eliminar" uk-modal="center: true" class="uk-modal">
+              <div _ngcontent-dju-37="" class="uk-modal-dialog">
+                    <button _ngcontent-dju-37="" class="uk-modal-close-default uk-close uk-icon" type="button" uk-close=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" icon="close-icon" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <div _ngcontent-dju-37="" class="uk-modal-header">
+                        <h2 _ngcontent-dju-37="" class="uk-modal-title">¿Seguro que desea eliminar nueva?</h2>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-body">
+                        <p _ngcontent-dju-37="">Si le das a aceptar elimina permanentemente la empresa y todos sus ordenadores.</p>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-footer uk-text-right">
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-primary uk-modal-close" type="button">Sí, eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        
+    </tbody><tbody _ngcontent-dju-37="" data-index="i">
+        <tr _ngcontent-dju-37="">
+            <td _ngcontent-dju-37="">otra</td>
+            <td _ngcontent-dju-37=""></td>
+            <td _ngcontent-dju-37="">1</td>
+            <td _ngcontent-dju-37="">
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": "true"
+}--><i _ngcontent-dju-37="" class="green circle icon" i=""></i>
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+              <!--template bindings={
+  "ng-reflect-ng-if": null
+}-->
+            </td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="positive ui button">Ver</button></td>
+            <td _ngcontent-dju-37=""><button _ngcontent-dju-37="" class="uk-button uk-button-default negative ui button" type="button" uk-toggle="target: #modal-eliminar">Eliminar</button></td>
+            <div _ngcontent-dju-37="" id="modal-eliminar" uk-modal="center: true" class="uk-modal">
+              <div _ngcontent-dju-37="" class="uk-modal-dialog">
+                    <button _ngcontent-dju-37="" class="uk-modal-close-default uk-close uk-icon" type="button" uk-close=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" icon="close-icon" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                    <div _ngcontent-dju-37="" class="uk-modal-header">
+                        <h2 _ngcontent-dju-37="" class="uk-modal-title">¿Seguro que desea eliminar otra?</h2>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-body">
+                        <p _ngcontent-dju-37="">Si le das a aceptar elimina permanentemente la empresa y todos sus ordenadores.</p>
+                    </div>
+                    <div _ngcontent-dju-37="" class="uk-modal-footer uk-text-right">
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button _ngcontent-dju-37="" class="uk-button uk-button-primary uk-modal-close" type="button">Sí, eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </tr>
+        
+    </tbody>
+</table>
+</div>
+</div></div></app-empresas></app-root>
+<div></div>
+<script type="text/javascript" src="./Duplicati Interface_files/inline.bundle.js"></script><script type="text/javascript" src="./Duplicati Interface_files/styles.bundle.js"></script><script type="text/javascript" src="./Duplicati Interface_files/vendor.bundle.js"></script><script type="text/javascript" src="./Duplicati Interface_files/main.bundle.js"></script>
+
+
+
+
+</body></html>
